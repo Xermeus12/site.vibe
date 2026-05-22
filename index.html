@@ -2120,6 +2120,230 @@
       }
     }
 
+  
+    /* =========================
+       COMPACT FIX: Polus + South blocks
+    ========================= */
+
+    #portfolio .portfolio-showcase {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr) !important;
+      gap: 18px !important;
+      align-items: start !important;
+    }
+
+    #portfolio .polus-case,
+    #portfolio .south-analytics-case {
+      width: auto !important;
+      grid-column: auto !important;
+      min-height: auto !important;
+      padding: 22px !important;
+      border-radius: 30px !important;
+    }
+
+    #portfolio .polus-case-top,
+    #portfolio .south-case-top {
+      gap: 16px !important;
+      margin-bottom: 18px !important;
+    }
+
+    #portfolio .polus-case-title h3,
+    #portfolio .south-case-title h3 {
+      font-size: 24px !important;
+      line-height: 1.05 !important;
+    }
+
+    #portfolio .polus-case-title p,
+    #portfolio .south-case-title p,
+    #portfolio .polus-case-copy,
+    #portfolio .south-case-copy {
+      font-size: 13px !important;
+      line-height: 1.55 !important;
+    }
+
+    #portfolio .polus-visual-layout {
+      grid-template-columns: 1fr .42fr !important;
+      gap: 10px !important;
+    }
+
+    #portfolio .polus-desktop-preview {
+      min-height: 280px !important;
+      height: 280px !important;
+    }
+
+    #portfolio .polus-admin-preview {
+      min-height: 135px !important;
+      height: 135px !important;
+      margin-top: 10px !important;
+    }
+
+    #portfolio .polus-mobile-preview {
+      min-height: 425px !important;
+      height: 425px !important;
+    }
+
+    #portfolio .polus-screen-img {
+      object-fit: cover !important;
+      object-position: top center !important;
+    }
+
+    #portfolio .polus-admin-preview .polus-screen-img {
+      object-position: top left !important;
+    }
+
+    #portfolio .polus-bottom,
+    #portfolio .south-bottom {
+      gap: 10px !important;
+      margin-top: 12px !important;
+    }
+
+    #portfolio .polus-actions,
+    #portfolio .polus-system,
+    #portfolio .south-actions,
+    #portfolio .south-insights {
+      padding: 14px !important;
+      border-radius: 18px !important;
+    }
+
+    #portfolio .polus-actions h4,
+    #portfolio .polus-system h4,
+    #portfolio .south-actions h4,
+    #portfolio .south-insights h4 {
+      font-size: 11px !important;
+      margin-bottom: 8px !important;
+    }
+
+    #portfolio .polus-actions ul,
+    #portfolio .polus-system ul,
+    #portfolio .south-actions ul,
+    #portfolio .south-insights ul {
+      font-size: 12px !important;
+      line-height: 1.5 !important;
+      padding-left: 16px !important;
+    }
+
+    #portfolio .portfolio-tags {
+      margin-top: 12px !important;
+      gap: 7px !important;
+    }
+
+    #portfolio .portfolio-tags b {
+      font-size: 10px !important;
+      padding: 6px 8px !important;
+    }
+
+    /* Южный Дом compact */
+    #portfolio .south-analytics-case .metrika-window {
+      cursor: default !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-window::after {
+      display: none !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-topbar {
+      height: 54px !important;
+      padding: 0 18px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-logo {
+      font-size: 16px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-logo span {
+      width: 28px !important;
+      height: 28px !important;
+      border-radius: 10px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-period {
+      font-size: 12px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-content {
+      padding: 18px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-heading {
+      font-size: 21px !important;
+      margin-bottom: 16px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 10px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-stat {
+      min-height: 90px !important;
+      padding: 14px !important;
+      border-radius: 18px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-stat small {
+      font-size: 11px !important;
+      margin-bottom: 7px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-stat b {
+      font-size: 25px !important;
+      line-height: 1 !important;
+      letter-spacing: -.055em !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-stat em {
+      font-size: 11px !important;
+      margin-top: 6px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-chart {
+      height: 235px !important;
+      border-radius: 18px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-legend {
+      font-size: 11px !important;
+      gap: 8px !important;
+    }
+
+    @media(max-width: 940px) {
+      #portfolio .portfolio-showcase {
+        grid-template-columns: 1fr !important;
+      }
+
+      #portfolio .polus-desktop-preview {
+        height: 330px !important;
+      }
+
+      #portfolio .polus-admin-preview {
+        height: 170px !important;
+      }
+
+      #portfolio .polus-mobile-preview {
+        height: 520px !important;
+      }
+    }
+
+    @media(max-width: 680px) {
+      #portfolio .polus-visual-layout,
+      #portfolio .polus-bottom,
+      #portfolio .south-bottom {
+        grid-template-columns: 1fr !important;
+      }
+
+      #portfolio .south-analytics-case .metrika-stats {
+        grid-template-columns: 1fr !important;
+      }
+
+      #portfolio .south-analytics-case .metrika-chart {
+        height: 220px !important;
+      }
+
+      #portfolio .polus-mobile-preview {
+        height: 480px !important;
+      }
+    }
+
   </style>
 </head>
 
