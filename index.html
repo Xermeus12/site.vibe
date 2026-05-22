@@ -568,8 +568,8 @@
     }
     .portfolio-showcase {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 18px;
+      grid-template-columns: 1fr;
+      gap: 24px;
       margin-top: 26px;
     }
 
@@ -1904,6 +1904,108 @@
       }
     }
 
+  
+    /* =========================
+       FIX: South analytics full width + non-clickable
+    ========================= */
+
+    .portfolio-showcase {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+
+    .south-analytics-case,
+    .polus-case {
+      width: 100%;
+    }
+
+    .south-analytics-case .metrika-window {
+      cursor: default !important;
+    }
+
+    .south-analytics-case .metrika-window::after {
+      display: none !important;
+    }
+
+    .south-analytics-case .metrika-stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 16px;
+    }
+
+    .south-analytics-case .metrika-stat {
+      min-height: 118px;
+      padding: 22px;
+      border-radius: 24px;
+    }
+
+    .south-analytics-case .metrika-stat small {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .south-analytics-case .metrika-stat b {
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: .95;
+      letter-spacing: -.07em;
+    }
+
+    .south-analytics-case .metrika-stat em {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .south-analytics-case .metrika-chart {
+      height: 360px !important;
+    }
+
+    .south-analytics-case .metrika-content {
+      padding: 28px;
+    }
+
+    .south-analytics-case .metrika-heading {
+      font-size: 30px;
+      margin-bottom: 24px;
+    }
+
+    .south-analytics-case .metrika-topbar {
+      height: 70px;
+      padding: 0 26px;
+    }
+
+    .south-analytics-case .metrika-logo {
+      font-size: 20px;
+    }
+
+    .south-analytics-case .metrika-logo span {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+    }
+
+    .south-analytics-case .metrika-period {
+      font-size: 14px;
+    }
+
+    @media(max-width: 940px) {
+      .south-analytics-case .metrika-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      }
+
+      .south-analytics-case .metrika-stat b {
+        font-size: 32px;
+      }
+    }
+
+    @media(max-width: 680px) {
+      .south-analytics-case .metrika-stats {
+        grid-template-columns: 1fr !important;
+      }
+
+      .south-analytics-case .metrika-chart {
+        height: 240px !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -2273,7 +2375,7 @@
             </div>
           </div>
 
-          <div class="metrika-window clickable-preview" data-full="portfolio-south-analytics.jpg" data-title="Южный Дом — аналитика трафика и источников">
+          <div class="metrika-window">
             <div class="metrika-topbar">
               <div class="metrika-logo"><span>🏠</span>Южный Дом</div>
               <div class="metrika-period">
