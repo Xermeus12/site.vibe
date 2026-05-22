@@ -895,6 +895,155 @@
       .portfolio-image span { font-size: 25px; }
       .portfolio-track { animation-duration: 42s; }
     }
+  
+    /* Hero photo as cutout-like editorial layer */
+    .persona-stage {
+      position: relative;
+      min-height: 690px;
+      overflow: visible;
+      perspective: 1200px;
+    }
+
+    .persona-wrap {
+      position: absolute;
+      inset: 20px 0 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      filter: drop-shadow(0 34px 70px rgba(17, 42, 82, .36));
+      animation: personaFloat 6.5s ease-in-out infinite alternate;
+      z-index: 2;
+    }
+
+    .persona-img {
+      width: min(520px, 92%);
+      height: auto;
+      display: block;
+      object-fit: contain;
+      transform: rotate(1.2deg);
+      -webkit-mask-image:
+        linear-gradient(to bottom, #000 0%, #000 82%, transparent 100%),
+        radial-gradient(ellipse at 50% 48%, #000 0%, #000 54%, transparent 78%);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to bottom, #000 0%, #000 82%, transparent 100%),
+        radial-gradient(ellipse at 50% 48%, #000 0%, #000 54%, transparent 78%);
+      filter: saturate(.94) contrast(1.04);
+    }
+
+    @keyframes personaFloat {
+      from { transform: translate3d(0, 0, 0) rotate(.4deg); }
+      to { transform: translate3d(0, -14px, 0) rotate(-.7deg); }
+    }
+
+    .persona-glow {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(26px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .persona-glow-1 {
+      width: 520px;
+      height: 520px;
+      right: 30px;
+      top: 80px;
+      background: radial-gradient(circle, rgba(127,176,255,.33), rgba(120,255,207,.16), transparent 68%);
+      animation: floatOrb 10s ease-in-out infinite alternate;
+    }
+
+    .persona-glow-2 {
+      width: 380px;
+      height: 380px;
+      left: 24px;
+      bottom: 40px;
+      background: radial-gradient(circle, rgba(177,121,255,.28), rgba(255,255,255,.07), transparent 68%);
+      animation: floatOrb 13s ease-in-out infinite alternate-reverse;
+    }
+
+    .persona-plate {
+      position: absolute;
+      right: 22px;
+      top: 92px;
+      z-index: 3;
+      width: 235px;
+      padding: 15px 16px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 70px rgba(20,84,166,.18);
+      transform: rotate(4deg);
+    }
+
+    .persona-plate span {
+      display: block;
+      font-size: 12px;
+      color: #9fb4d4;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 5px;
+    }
+
+    .persona-plate b {
+      display: block;
+      font-size: 15px;
+      letter-spacing: -.035em;
+      color: #fff;
+    }
+
+    .persona-chip {
+      position: absolute;
+      z-index: 4;
+      padding: 12px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+      color: #dfeaff;
+      font-size: 13px;
+      font-weight: 850;
+      box-shadow: 0 20px 60px rgba(0,0,0,.18);
+    }
+
+    .chip-left {
+      left: 18px;
+      bottom: 128px;
+      transform: rotate(-5deg);
+    }
+
+    .chip-right {
+      right: 2px;
+      bottom: 220px;
+      transform: rotate(5deg);
+    }
+
+    .photo-card,
+    .photo-frame,
+    .floating-note,
+    .floating-badge {
+      display: none !important;
+    }
+
+    @media(max-width: 940px) {
+      .persona-stage { min-height: 620px; }
+      .persona-img { width: min(470px, 90%); }
+      .persona-plate { right: 8px; top: 62px; }
+      .chip-left { left: 10px; bottom: 96px; }
+      .chip-right { right: 6px; bottom: 180px; }
+    }
+
+    @media(max-width: 560px) {
+      .persona-stage { min-height: 560px; }
+      .persona-wrap { inset: 40px -34px 0 -34px; }
+      .persona-img { width: 430px; }
+      .persona-plate { width: 205px; right: 8px; top: 46px; transform: rotate(2deg); }
+      .persona-chip { font-size: 12px; padding: 10px 12px; }
+      .chip-left { bottom: 74px; }
+      .chip-right { bottom: 155px; }
+    }
   </style>
 </head>
 
@@ -927,17 +1076,21 @@
         </div>
       </div>
 
-      <div class="photo-stage" aria-label="Фото Вячеслава">
-        <div class="floating-badge">🌐 internet observations</div>
-        <div class="photo-card">
-          <div class="photo-frame">
-            <img src="photo.JPG" alt="Вячеслав" />
-          </div>
+      <div class="photo-stage persona-stage" aria-label="Фото Вячеслава">
+        <div class="persona-glow persona-glow-1"></div>
+        <div class="persona-glow persona-glow-2"></div>
+
+        <div class="persona-plate">
+          <span>digital operator</span>
+          <b>marketing · web · visual</b>
         </div>
-        <div class="floating-note">
-          <strong>Не просто “маркетолог в шапке профиля”.</strong>
-          <p>Собираю проекты, визуал, смыслы, мемы и хаос в то, что людям хочется открыть.</p>
+
+        <div class="persona-wrap">
+          <img class="persona-img" src="photo.jpg" alt="Вячеслав" />
         </div>
+
+        <div class="persona-chip chip-left">weird digital vibe</div>
+        <div class="persona-chip chip-right">internet observations</div>
       </div>
     </div>
   </header>
