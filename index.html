@@ -1978,6 +1978,148 @@
       }
     }
 
+  
+    /* =========================
+       FINAL FIX: portfolio layout + screenshots fit
+    ========================= */
+
+    #portfolio .portfolio-showcase {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+      margin-top: 26px !important;
+    }
+
+    #portfolio .polus-case,
+    #portfolio .south-analytics-case {
+      width: 100% !important;
+      grid-column: 1 / -1 !important;
+    }
+
+    /* Южный Дом: блок не кликабельный */
+    #portfolio .south-analytics-case .metrika-window {
+      cursor: default !important;
+      pointer-events: auto !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-window::after,
+    #portfolio .south-analytics-case .metrika-window:hover::after {
+      display: none !important;
+      opacity: 0 !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 16px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-stat {
+      min-height: 118px !important;
+      padding: 22px !important;
+      border-radius: 24px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-stat small {
+      font-size: 14px !important;
+      margin-bottom: 12px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-stat b {
+      font-size: clamp(34px, 4vw, 52px) !important;
+      line-height: .95 !important;
+      letter-spacing: -.07em !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-chart {
+      height: 360px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-content {
+      padding: 28px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-heading {
+      font-size: 30px !important;
+      margin-bottom: 24px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-topbar {
+      height: 70px !important;
+      padding: 0 26px !important;
+    }
+
+    #portfolio .south-analytics-case .metrika-logo {
+      font-size: 20px !important;
+    }
+
+    /* Превью картинок: не режем важное */
+    #portfolio .mini-visual.has-image {
+      height: 190px !important;
+      background: rgba(255,255,255,.06) !important;
+      padding: 8px !important;
+      display: grid !important;
+      place-items: center !important;
+    }
+
+    #portfolio .mini-visual.has-image img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      border-radius: 12px !important;
+      background: rgba(255,255,255,.04);
+    }
+
+    #portfolio .mini-visual.has-image:hover img {
+      transform: scale(1.02) !important;
+    }
+
+    /* Polus превью: показываем аккуратнее, не как бесконечную простыню */
+    #portfolio .polus-desktop-preview {
+      min-height: 430px !important;
+      background: rgba(255,255,255,.04) !important;
+    }
+
+    #portfolio .polus-admin-preview {
+      min-height: 230px !important;
+      background: rgba(255,255,255,.04) !important;
+    }
+
+    #portfolio .polus-mobile-preview {
+      min-height: 680px !important;
+      background: rgba(255,255,255,.04) !important;
+    }
+
+    #portfolio .polus-screen-img {
+      object-fit: contain !important;
+      object-position: top center !important;
+      background: rgba(255,255,255,.04);
+    }
+
+    @media(max-width: 940px) {
+      #portfolio .south-analytics-case .metrika-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      }
+
+      #portfolio .polus-visual-layout {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media(max-width: 680px) {
+      #portfolio .south-analytics-case .metrika-stats {
+        grid-template-columns: 1fr !important;
+      }
+
+      #portfolio .south-analytics-case .metrika-chart {
+        height: 240px !important;
+      }
+
+      #portfolio .mini-visual.has-image {
+        height: 220px !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -2347,7 +2489,7 @@
             </div>
           </div>
 
-          <div class="metrika-window clickable-preview" data-full="portfolio-south-analytics.jpg" data-title="Южный Дом — аналитика трафика и источников">
+          <div class="metrika-window">
             <div class="metrika-topbar">
               <div class="metrika-logo"><span>🏠</span>Южный Дом</div>
               <div class="metrika-period">
