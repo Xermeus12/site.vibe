@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вячеслав | Weird Digital Vibe</title>
+  <meta name="description" content="Вячеслав — маркетинг, сайты, digital-проекты, интернет-культура и weird digital vibe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07080c;
+      --bg-soft: #10131b;
+      --card: rgba(255, 255, 255, 0.055);
+      --card-strong: rgba(255, 255, 255, 0.09);
+      --line: rgba(255, 255, 255, 0.11);
+      --text: #f4f7fb;
+      --muted: #9ba4b5;
+      --blue: #1454a6;
+      --blue-light: #4b8df7;
+      --green: #78ffcf;
+      --pink: #ff63c3;
+      --radius-xl: 34px;
+      --radius-md: 22px;
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(20, 84, 166, 0.42), transparent 30%),
+        radial-gradient(circle at 86% 14%, rgba(255, 99, 195, 0.15), transparent 28%),
+        radial-gradient(circle at 48% 100%, rgba(120, 255, 207, 0.1), transparent 28%),
+        var(--bg);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 85%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(rgba(255,255,255,0.025) 50%, transparent 50%);
+      background-size: 100% 4px;
+      mix-blend-mode: overlay;
+      opacity: 0.22;
+      z-index: 20;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0;
+      position: relative;
+      z-index: 3;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), #071a35);
+      box-shadow: 0 12px 40px rgba(20, 84, 166, 0.45);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      min-height: calc(100vh - 92px);
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 58px;
+      padding: 50px 0 96px;
+      position: relative;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.045);
+      backdrop-filter: blur(18px);
+      color: #cbd4e6;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 20px var(--green);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(54px, 7.2vw, 104px);
+      line-height: 0.88;
+      letter-spacing: -0.075em;
+      font-weight: 900;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff, #7fb0ff 38%, #78ffcf 78%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      margin: 28px 0 0;
+      max-width: 680px;
+      color: #bac3d2;
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.7;
+      letter-spacing: -0.015em;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 21px;
+      border-radius: 17px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 18px 48px rgba(20, 84, 166, 0.38);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.06);
+      border-color: var(--line);
+      color: var(--text);
+      backdrop-filter: blur(20px);
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary:hover { box-shadow: 0 22px 60px rgba(20, 84, 166, 0.55); }
+    .btn-secondary:hover { border-color: rgba(255,255,255,.24); }
+
+    .photo-stage {
+      position: relative;
+      min-height: 650px;
+      display: grid;
+      place-items: center;
+    }
+
+    .photo-card {
+      position: relative;
+      width: min(420px, 100%);
+      border-radius: 42px;
+      padding: 12px;
+      background: linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.035));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+      isolation: isolate;
+    }
+
+    .photo-card::before {
+      content: "";
+      position: absolute;
+      inset: -24px;
+      border-radius: 56px;
+      background: linear-gradient(135deg, rgba(20,84,166,.36), rgba(255,99,195,.16), rgba(120,255,207,.13));
+      filter: blur(34px);
+      z-index: -1;
+    }
+
+    .photo-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      min-height: 560px;
+      background: #0e1017;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.04) saturate(0.88) brightness(0.95);
+    }
+
+    .photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(7,8,12,.78), transparent 45%),
+        radial-gradient(circle at 70% 18%, rgba(20,84,166,.28), transparent 32%);
+      pointer-events: none;
+    }
+
+    .floating-note {
+      position: absolute;
+      left: -26px;
+      bottom: 68px;
+      max-width: 275px;
+      padding: 18px 18px 17px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(10, 12, 18, 0.78);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 22px 70px rgba(0,0,0,.38);
+      transform: rotate(-4deg);
+    }
+
+    .floating-note strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .floating-note p {
+      margin: 0;
+      color: #b9c2d3;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .floating-badge {
+      position: absolute;
+      right: 0;
+      top: 78px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(22px);
+      font-size: 13px;
+      font-weight: 800;
+      color: #e8eefb;
+      transform: rotate(4deg);
+      box-shadow: 0 22px 70px rgba(0,0,0,.34);
+    }
+
+    .ticker {
+      border-block: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.035);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      gap: 36px;
+      padding: 16px 0;
+      animation: ticker 28s linear infinite;
+      color: #d7deec;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .ticker-track span { opacity: .76; }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    section { padding: 104px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 32px;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: .96;
+      letter-spacing: -0.065em;
+    }
+
+    .section-text {
+      margin: 0;
+      max-width: 470px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 245px;
+      padding: 26px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--card);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 70px rgba(0,0,0,.18);
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(75, 141, 247, 0.45);
+      background: var(--card-strong);
+    }
+
+    .card small {
+      display: inline-flex;
+      margin-bottom: 28px;
+      color: #7fb0ff;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .card p {
+      margin: 0;
+      color: #aeb7c8;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .work-block {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .terminal {
+      min-height: 450px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: rgba(5, 7, 12, 0.76);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .terminal-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 48px;
+      padding: 0 18px;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.045);
+    }
+
+    .circle {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.25);
+    }
+
+    .terminal-body {
+      padding: 28px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #cbd7e9;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .terminal-body .muted { color: #687289; }
+    .terminal-body .blue { color: #7fb0ff; }
+    .terminal-body .green { color: #78ffcf; }
+    .terminal-body .pink { color: #ff8bd6; }
+
+    .manifesto {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(20,84,166,.24), rgba(255,255,255,.055)),
+        rgba(255,255,255,.045);
+      padding: 36px;
+      min-height: 450px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+    }
+
+    .manifesto p {
+      margin: 0;
+      color: #d8dfeb;
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1.16;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 36px;
+    }
+
+    .chip {
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.12);
+      color: #d8dfeb;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .quote {
+      padding: 52px;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 12% 20%, rgba(255,99,195,.14), transparent 34%),
+        radial-gradient(circle at 82% 80%, rgba(120,255,207,.1), transparent 30%),
+        rgba(255,255,255,.045);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .quote p {
+      margin: 0 auto;
+      max-width: 940px;
+      font-size: clamp(28px, 4.7vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -0.07em;
+      font-weight: 900;
+    }
+
+    .quote .sub {
+      display: block;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 15px;
+      letter-spacing: 0;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .footer {
+      padding: 34px 0 54px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    @media (max-width: 940px) {
+      .hero,
+      .work-block { grid-template-columns: 1fr; }
+
+      .hero { padding-top: 28px; }
+      .photo-stage { min-height: auto; }
+      .photo-card { width: min(390px, 100%); margin: 0 auto; }
+      .photo-frame, .photo-frame img { min-height: 510px; }
+      .floating-note { left: 10px; bottom: 28px; }
+      .floating-badge { right: 16px; top: 28px; }
+      .cards { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-text { margin-top: 18px; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 24px, 1180px); }
+      .nav { padding: 20px 0; }
+      .hero { gap: 34px; padding-bottom: 72px; }
+      .lead { font-size: 16px; }
+      .btn { width: 100%; }
+      .photo-card { border-radius: 30px; padding: 9px; transform: rotate(0); }
+      .photo-frame { border-radius: 23px; }
+      .photo-frame, .photo-frame img { min-height: 440px; }
+      .floating-note { position: relative; left: auto; bottom: auto; margin-top: -74px; max-width: calc(100% - 22px); transform: rotate(0); }
+      .floating-badge { transform: rotate(0); }
+      section { padding: 72px 0; }
+      .card, .manifesto, .quote { padding: 24px; }
+      .terminal { min-height: auto; }
+      .terminal-body { padding: 22px; font-size: 12.5px; }
+    }
+  
+    /* Extra motion / visual candy */
+    .orb {
+      position: fixed;
+      width: 360px;
+      height: 360px;
+      border-radius: 999px;
+      filter: blur(42px);
+      opacity: .16;
+      pointer-events: none;
+      z-index: -1;
+      animation: floatOrb 13s ease-in-out infinite alternate;
+    }
+
+    .orb-1 { left: -110px; top: 18%; background: #7fb0ff; }
+    .orb-2 { right: -130px; top: 42%; background: #78ffcf; animation-delay: -4s; }
+    .orb-3 { left: 35%; bottom: -190px; background: #b179ff; animation-delay: -8s; }
+
+    @keyframes floatOrb {
+      0% { transform: translate3d(0,0,0) scale(1); }
+      100% { transform: translate3d(38px,-42px,0) scale(1.18); }
+    }
+
+    .hero h1,
+    .lead,
+    .eyebrow,
+    .actions,
+    .photo-stage,
+    .card,
+    .terminal,
+    .manifesto,
+    .quote,
+    .portfolio-card {
+      animation: fadeUp .8s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .lead { animation-delay: .08s; }
+    .actions { animation-delay: .16s; }
+    .photo-stage { animation-delay: .22s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .glitch-word {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch-word::before,
+    .glitch-word::after {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .glitch-word::before { color: #78ffcf; transform: translateX(-2px); }
+    .glitch-word::after { color: #ff63c3; transform: translateX(2px); }
+
+    .glitch-word:hover::before,
+    .glitch-word:hover::after {
+      opacity: .45;
+      animation: microGlitch .45s steps(2,end) both;
+    }
+
+    @keyframes microGlitch {
+      0% { clip-path: inset(0 0 85% 0); }
+      25% { clip-path: inset(35% 0 40% 0); }
+      50% { clip-path: inset(80% 0 0 0); }
+      75% { clip-path: inset(10% 0 70% 0); }
+      100% { clip-path: inset(0 0 0 0); }
+    }
+
+    .micro-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .micro-card {
+      min-height: 120px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.11);
+      background: rgba(255,255,255,.048);
+      padding: 18px;
+      overflow: hidden;
+      position: relative;
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .micro-card:hover {
+      transform: translateY(-5px) rotate(-1deg);
+      background: rgba(255,255,255,.085);
+    }
+
+    .micro-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -42px;
+      top: -42px;
+      border-radius: 999px;
+      background: rgba(20,84,166,.16);
+    }
+
+    .micro-card strong {
+      display: block;
+      font-size: 22px;
+      letter-spacing: -0.04em;
+      margin-bottom: 7px;
+    }
+
+    .micro-card span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .portfolio-slider {
+      position: relative;
+      overflow: hidden;
+      padding: 14px 0 34px;
+    }
+
+    .portfolio-slider::before,
+    .portfolio-slider::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 110px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .portfolio-slider::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+    .portfolio-slider::after { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
+
+    .portfolio-track {
+      display: flex;
+      gap: 22px;
+      width: max-content;
+      animation: portfolioRun 32s linear infinite;
+    }
+
+    .portfolio-slider:hover .portfolio-track { animation-play-state: paused; }
+
+    @keyframes portfolioRun {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .portfolio-card {
+      width: 420px;
+      min-height: 480px;
+      border-radius: 34px;
+      overflow: hidden;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 24px 80px rgba(0,0,0,.16);
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-9px) scale(1.015);
+      border-color: rgba(20,84,166,.45);
+      box-shadow: 0 32px 90px rgba(20,84,166,.18);
+    }
+
+    .portfolio-image {
+      height: 300px;
+      position: relative;
+      display: flex;
+      align-items: end;
+      padding: 26px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .portfolio-image::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.42);
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.36) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,.32) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity: .26;
+      z-index: -1;
+    }
+
+    .portfolio-image::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border-radius: 999px;
+      right: -70px;
+      top: -70px;
+      background: rgba(255,255,255,.34);
+      filter: blur(4px);
+      z-index: -1;
+      transition: transform .35s ease;
+    }
+
+    .portfolio-card:hover .portfolio-image::after { transform: scale(1.22) translate(-16px, 16px); }
+
+    .portfolio-image span {
+      font-size: 34px;
+      font-weight: 950;
+      letter-spacing: -0.075em;
+      color: rgba(255,255,255,.95);
+      text-shadow: 0 12px 35px rgba(0,0,0,.18);
+    }
+
+    .portfolio-shot {
+      position: absolute;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.38);
+      background: rgba(255,255,255,.36);
+      box-shadow: 0 22px 50px rgba(0,0,0,.14);
+      backdrop-filter: blur(10px);
+    }
+
+    .shot-main {
+      width: 64%;
+      height: 44%;
+      left: 30px;
+      top: 38px;
+    }
+
+    .shot-side {
+      width: 32%;
+      height: 58%;
+      right: 32px;
+      top: 70px;
+      transform: rotate(4deg);
+    }
+
+    .shot-small {
+      width: 42%;
+      height: 18%;
+      left: 54px;
+      top: 178px;
+      transform: rotate(-3deg);
+    }
+
+    .portfolio-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .portfolio-tags b {
+      font-size: 11px;
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(20,84,166,.09);
+      color: #4e6f9a;
+      border: 1px solid rgba(20,84,166,.13);
+    }
+
+    .portfolio-info {
+      padding: 25px;
+    }
+
+    .portfolio-info h3 {
+      margin: 0 0 12px;
+      font-size: 25px;
+      letter-spacing: -0.05em;
+    }
+
+    .portfolio-info p {
+      margin: 0;
+      color: #8e98aa;
+      line-height: 1.68;
+      font-size: 15px;
+    }
+
+    .portfolio-blue { background: linear-gradient(135deg, #bfd9ff, #eef6ff); }
+    .portfolio-cyan { background: linear-gradient(135deg, #c7fff1, #f4fffd); }
+    .portfolio-purple { background: linear-gradient(135deg, #d9ccff, #fbf8ff); }
+    .portfolio-mix { background: linear-gradient(135deg, #cae0ff, #e8fff8 52%, #f1e8ff); }
+    .portfolio-ice { background: linear-gradient(135deg, #d6f2ff, #ffffff); }
+    .portfolio-violet { background: linear-gradient(135deg, #ede3ff, #e9f2ff); }
+    .portfolio-sea { background: linear-gradient(135deg, #c9fff7, #e4ecff); }
+    .portfolio-paper { background: linear-gradient(135deg, #ffffff, #eaf3ff); }
+
+    .portfolio-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    @media(max-width: 940px) {
+      .micro-row { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-card { width: 360px; }
+      .portfolio-image { height: 260px; }
+    }
+
+    @media(max-width: 560px) {
+      .orb { width: 240px; height: 240px; }
+      .micro-row { grid-template-columns: 1fr; }
+      .portfolio-slider::before,
+      .portfolio-slider::after { width: 34px; }
+      .portfolio-card { width: 300px; min-height: 430px; }
+      .portfolio-image { height: 220px; padding: 20px; }
+      .portfolio-image span { font-size: 25px; }
+      .portfolio-track { animation-duration: 42s; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="На главную">
+        <span class="brand-mark">⌁</span>
+        <span>Вячеслав / Weird Digital Vibe</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#what">что делаю</a>
+        <a href="#style">вайб</a>
+        <a href="#contacts">контакты</a>
+      </div>
+    </nav>
+
+    <div class="hero" id="top">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> маркетинг · сайты · интернет-культура</div>
+        <h1>Digital,<br><span class="gradient-text glitch-word" data-text="weird vibe">weird vibe</span><br>и нормальная работа.</h1>
+        <p class="lead">
+          Я Вячеслав. Делаю сайты, контент, рекламу и digital-проекты руками.
+          Где-то между маркетологом, технарём, визуальщиком и человеком, который слишком внимательно смотрит на интернет.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://t.me/norvgmi" target="_blank" rel="noreferrer">Написать в Telegram →</a>
+          <a class="btn btn-secondary" href="https://www.instagram.com/sharafetdinov.vibe/" target="_blank" rel="noreferrer">Instagram ↗</a>
+        </div>
+      </div>
+
+      <div class="photo-stage" aria-label="Фото Вячеслава">
+        <div class="floating-badge">🌐 internet observations</div>
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="YOUR_PHOTO_HERE" alt="Вячеслав" />
+          </div>
+        </div>
+        <div class="floating-note">
+          <strong>Не просто “маркетолог в шапке профиля”.</strong>
+          <p>Собираю проекты, визуал, смыслы, мемы и хаос в то, что людям хочется открыть.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>digital chaos</span><span>marketing</span><span>UX</span><span>content</span><span>internet culture</span><span>brainrot as research</span><span>visual taste</span><span>projects</span>
+      <span>digital chaos</span><span>marketing</span><span>UX</span><span>content</span><span>internet culture</span><span>brainrot as research</span><span>visual taste</span><span>projects</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="wrap" id="what">
+      <div class="section-head">
+        <h2>Делаю digital без ощущения пластикового эксперта.</h2>
+        <p class="section-text">
+          Мне интересны не только заявки и кнопки, а то, как проект ощущается: визуал, структура, язык, доверие, скорость восприятия и культурный контекст.
+        </p>
+      </div>
+
+      <div class="micro-row">
+        <div class="micro-card"><strong>UX</strong><span>Чтобы пользователь не думал “куда нажимать”.</span></div>
+        <div class="micro-card"><strong>Visual</strong><span>Чтобы проект ощущался живым, а не шаблонным.</span></div>
+        <div class="micro-card"><strong>Content</strong><span>Чтобы тексты не звучали как тендерный документ.</span></div>
+        <div class="micro-card"><strong>Chaos</strong><span>Чтобы “просто кнопочка” не сожрала весь проект.</span></div>
+      </div>
+
+      <div class="cards" style="margin-top: 18px;">
+        <article class="card">
+          <small>01 / web</small>
+          <h3>Сайты и лендинги</h3>
+          <p>Структура, блоки, тексты, визуальная логика, адаптив, CTA, нормальный UX и меньше “сделайте красиво”.</p>
+        </article>
+
+        <article class="card">
+          <small>02 / content</small>
+          <h3>Контент и упаковка</h3>
+          <p>Посты, описания, офферы, карточки, визуальные идеи и подача, которая не выглядит как корпоративный сон.</p>
+        </article>
+
+        <article class="card">
+          <small>03 / strategy</small>
+          <h3>Digital-мышление</h3>
+          <p>Смотрю на проект как на систему: внимание, путь пользователя, коммуникация, мемы, культура и бизнес-задача.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="style">
+      <div class="work-block">
+        <div class="terminal">
+          <div class="terminal-top">
+            <span class="circle"></span><span class="circle"></span><span class="circle"></span>
+          </div>
+          <div class="terminal-body">
+            <span class="muted">// current mode</span><br>
+            <span class="blue">const</span> slava = {<br>
+            &nbsp;&nbsp;role: <span class="green">"marketing + web + content"</span>,<br>
+            &nbsp;&nbsp;taste: <span class="green">"clean, dark, strange, human"</span>,<br>
+            &nbsp;&nbsp;skills: [<span class="green">"UX"</span>, <span class="green">"texts"</span>, <span class="green">"ads"</span>, <span class="green">"visuals"</span>],<br>
+            &nbsp;&nbsp;weakness: <span class="pink">"там просто кнопочку поправить"</span>,<br>
+            &nbsp;&nbsp;vibe: <span class="green">"weird digital, но по делу"</span><br>
+            };<br><br>
+            <span class="muted">// goal</span><br>
+            makeItFeelAlive(slava);<br>
+            fixTheChaos(project);<br>
+            explainHumanly(client);<br>
+          </div>
+        </div>
+
+        <div class="manifesto">
+          <div>
+            <p>
+              Я не хочу делать “идеальный личный бренд”.
+              Я хочу сделать место, где видно человека: работу, вкус, странность, опыт и интернет в голове.
+            </p>
+          </div>
+          <div class="chips">
+            <span class="chip">маркетинг</span>
+            <span class="chip">сайты</span>
+            <span class="chip">визуал</span>
+            <span class="chip">мемы</span>
+            <span class="chip">weird digital</span>
+            <span class="chip">без духоты</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <h2>Проекты и опыт</h2>
+        <p class="section-text">
+          Не просто “делал рекламу”.
+          Скорее собирал digital-среду вокруг проектов:
+          сайты, UX, контент, визуал, интернет-магазины и технический хаос.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <small>CASE / POLUS+</small>
+          <h3>ABCP + интернет-магазин</h3>
+          <p>
+            UX, структура, интеграции,
+            каталоги, визуал,
+            работа с 1С,
+            адаптация под реальные процессы бизнеса.
+          </p>
+        </article>
+
+        <article class="card">
+          <small>CASE / SOUTH HOUSE</small>
+          <h3>Контент и digital</h3>
+          <p>
+            Посты, реклама,
+            визуал, лендинги,
+            подача проектов,
+            маркетинг без ощущения “строительного PDF”.
+          </p>
+        </article>
+
+        <article class="card">
+          <small>CASE / MARKETPLACES</small>
+          <h3>Инфографика и упаковка</h3>
+          <p>
+            Ozon / WB,
+            карточки товаров,
+            SEO-описания,
+            визуальная упаковка и ощущение бренда.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <h2>Что я могу сделать</h2>
+        <p class="section-text">
+          Мне нравится не просто “делать сайт”,
+          а собирать ощущение проекта целиком.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <small>WEB</small>
+          <h3>Лендинги и сайты</h3>
+          <p>
+            Структура, тексты,
+            визуал, UX,
+            адаптив и ощущение живого проекта.
+          </p>
+        </article>
+
+        <article class="card">
+          <small>DIGITAL</small>
+          <h3>Маркетинг и реклама</h3>
+          <p>
+            Контент, офферы,
+            рекламные идеи,
+            подача и digital-коммуникация.
+          </p>
+        </article>
+
+        <article class="card">
+          <small>VISUAL</small>
+          <h3>Упаковка и атмосфера</h3>
+          <p>
+            Mood, визуальный язык,
+            internet-vibe,
+            подача без корпоративной духоты.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <h2>Немного цифр</h2>
+        <p class="section-text">
+          Без fake growth guru energy 😭
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <small>PROJECTS</small>
+          <h3>100+</h3>
+          <p>
+            Рекламных, digital и визуальных задач:
+            сайты, карточки, UX, контент, интеграции.
+          </p>
+        </article>
+
+        <article class="card">
+          <small>EXPERIENCE</small>
+          <h3>Digital multi-role</h3>
+          <p>
+            Маркетинг,
+            техничка,
+            визуал,
+            аналитика,
+            коммуникация с клиентами.
+          </p>
+        </article>
+
+        <article class="card">
+          <small>VIBE</small>
+          <h3>Still human</h3>
+          <p>
+            Не люблю делать бездушный контент.
+            Хочется, чтобы проекты ощущались живыми.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <h2>Visual portfolio</h2>
+        <p class="section-text">
+          Не “смотрите сколько кейсов”,
+          а скорее подборка того,
+          как я ощущаю digital-проекты визуально.
+        </p>
+      </div>
+
+      <div class="portfolio-slider" aria-label="Портфолио">
+        <div class="portfolio-track">
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-blue">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>POLUS+</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>ABCP / интернет-магазин</h3>
+              <p>UX, структура, интеграции, каталог, фильтры, городские склады и вечная боль “почему показывает не тот офис”.</p>
+              <div class="portfolio-tags"><b>UX</b><b>catalog</b><b>integration</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-cyan">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>ЮЖНЫЙ ДОМ</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Контент / реклама / визуал</h3>
+              <p>Посты, смыслы, рекламные заходы, визуалы для стройки, подача без ощущения “очередной строительной конторы”.</p>
+              <div class="portfolio-tags"><b>content</b><b>ads</b><b>visual</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-purple">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>WB / OZON</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Инфографика / карточки</h3>
+              <p>Композиция, SEO-описания, карточки товаров, визуальная упаковка и чистая подача без перегруза.</p>
+              <div class="portfolio-tags"><b>marketplace</b><b>cards</b><b>SEO</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-mix">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>LANDINGS</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Лендинги и структура</h3>
+              <p>Hero-блоки, CTA, секции, логика доверия, мобильный адаптив и визуальный ритм страницы.</p>
+              <div class="portfolio-tags"><b>landing</b><b>CTA</b><b>mobile</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-ice">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>UI BLOCKS</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Интерфейсные блоки</h3>
+              <p>Карточки, слайдеры, отзывы, формы, контакты, footer, страницы городов и всё, что обычно “просто поправить”.</p>
+              <div class="portfolio-tags"><b>UI</b><b>blocks</b><b>frontend</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-violet">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>BRAND FEEL</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Ощущение бренда</h3>
+              <p>Цвета, тон, визуальный язык, тексты, мемность там где уместно, и отсутствие пластиковой экспертности.</p>
+              <div class="portfolio-tags"><b>brand</b><b>tone</b><b>vibe</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-sea">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>SOCIAL</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Посты и соцсети</h3>
+              <p>VK, Telegram, Threads, короткие форматы, рофлы, наблюдения и аккуратная упаковка мыслей.</p>
+              <div class="portfolio-tags"><b>social</b><b>memes</b><b>posts</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-paper">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>ANALYTICS</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Отчёты без духоты</h3>
+              <p>CTR, CPA, CR, бюджеты, регионы, выводы по рекламе и нормальный человеческий язык вместо табличного ада.</p>
+              <div class="portfolio-tags"><b>Direct</b><b>CPA</b><b>reports</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-blue">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>POLUS+</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>ABCP / интернет-магазин</h3>
+              <p>UX, структура, интеграции, каталог, фильтры, городские склады и вечная боль “почему показывает не тот офис”.</p>
+              <div class="portfolio-tags"><b>UX</b><b>catalog</b><b>integration</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-cyan">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>ЮЖНЫЙ ДОМ</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Контент / реклама / визуал</h3>
+              <p>Посты, смыслы, рекламные заходы, визуалы для стройки, подача без ощущения “очередной строительной конторы”.</p>
+              <div class="portfolio-tags"><b>content</b><b>ads</b><b>visual</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-purple">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>WB / OZON</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Инфографика / карточки</h3>
+              <p>Композиция, SEO-описания, карточки товаров, визуальная упаковка и чистая подача без перегруза.</p>
+              <div class="portfolio-tags"><b>marketplace</b><b>cards</b><b>SEO</b></div>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div class="portfolio-image portfolio-mix">
+              <div class="portfolio-shot shot-main"></div>
+              <div class="portfolio-shot shot-side"></div>
+              <div class="portfolio-shot shot-small"></div>
+              <span>LANDINGS</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Лендинги и структура</h3>
+              <p>Hero-блоки, CTA, секции, логика доверия, мобильный адаптив и визуальный ритм страницы.</p>
+              <div class="portfolio-tags"><b>landing</b><b>CTA</b><b>mobile</b></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="portfolio-note">
+        Позже сюда можно вставить реальные скриншоты сайтов, карточек, баннеров и интерфейсов — структура уже готова под визуальное портфолио.
+      </p>
+    </section>
+
+    <section class="wrap">
+      <div class="quote">
+        <p>
+          “Когда вокруг слишком много осмысленного контента, иногда хочется просто нормальный digital-хаос.”
+        </p>
+        <span class="sub">Это не отказ от смысла. Это способ не превращаться в скучный корпоративный PDF.</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="wrap footer-inner">
+      <div>© Вячеслав · Weird Digital Vibe</div>
+      <div><a href="https://t.me/norvgmi" target="_blank" rel="noreferrer">Telegram</a> · <a href="https://www.instagram.com/sharafetdinov.vibe/" target="_blank" rel="noreferrer">Instagram</a> · <a href="https://www.threads.com/@sharafetdinov.vibe" target="_blank" rel="noreferrer">Threads</a></div>
+    </div>
+  </footer>
+</body>
+</html>
