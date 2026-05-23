@@ -2344,6 +2344,156 @@
       }
     }
 
+  
+    /* =========================
+       DIGITAL PACKAGING SECTION
+    ========================= */
+
+    .packaging-showcase {
+      margin-top: 18px;
+      padding: 24px;
+      border-radius: 34px;
+      border: 1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(circle at 12% 12%, rgba(127,176,255,.15), transparent 30%),
+        radial-gradient(circle at 88% 72%, rgba(120,255,207,.10), transparent 28%),
+        rgba(255,255,255,.055);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 24px 80px rgba(0,0,0,.18);
+    }
+
+    .packaging-head {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .packaging-head h3 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: .96;
+      letter-spacing: -.065em;
+    }
+
+    .packaging-head p {
+      margin: 0;
+      color: #b5bfd0;
+      line-height: 1.65;
+      font-size: 15px;
+      max-width: 660px;
+    }
+
+    .packaging-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr .9fr;
+      grid-auto-rows: 230px;
+      gap: 14px;
+    }
+
+    .pack-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.055);
+      cursor: zoom-in;
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+    }
+
+    .pack-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(120,255,207,.32);
+      box-shadow: 0 24px 70px rgba(0,0,0,.24);
+    }
+
+    .pack-card.big { grid-row: span 2; }
+    .pack-card.wide { grid-column: span 2; }
+
+    .pack-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform .45s ease, filter .45s ease;
+    }
+
+    .pack-card.contain img {
+      object-fit: contain;
+      padding: 12px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .pack-card:hover img {
+      transform: scale(1.035);
+      filter: saturate(1.06) contrast(1.04);
+    }
+
+    .pack-label {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 2;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(5,10,18,.62);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(14px);
+    }
+
+    .pack-label b {
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: -.02em;
+      margin-bottom: 4px;
+    }
+
+    .pack-label span {
+      display: block;
+      color: #b8c3d4;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .packaging-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .packaging-tags span {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.11);
+      color: #d8dfeb;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    @media(max-width: 940px) {
+      .packaging-head { grid-template-columns: 1fr; }
+      .packaging-grid { grid-template-columns: 1fr 1fr; }
+      .pack-card.big,
+      .pack-card.wide {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+
+    @media(max-width: 620px) {
+      .packaging-showcase { padding: 18px; }
+      .packaging-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+      }
+    }
+
   </style>
 </head>
 
@@ -2834,20 +2984,69 @@
         </article>
       </div>
 
-      <div class="visual-strip">
-        <div class="visual-strip-text">
-          <h3>Визуальные эксперименты</h3>
-          <p>UI, лендинги, typographic-постеры, hero-блоки, weird digital и интерфейсные приколы.</p>
+      <div class="packaging-showcase">
+        <div class="packaging-head">
+          <h3>Digital packaging</h3>
+          <p>
+            Коммерческий визуал для брендов, каталогов, лендингов и B2B-проектов:
+            фирменка, интерфейсные блоки, карточки категорий, презентация товара и визуальная упаковка.
+          </p>
         </div>
-        <div class="poster clickable-preview" data-full="portfolio-experiment-1.jpg" data-title="Визуальный эксперимент — hero block"></div>
-        <div class="poster clickable-preview" data-full="portfolio-experiment-2.jpg" data-title="Визуальный эксперимент — typography"></div>
-        <div class="poster clickable-preview" data-full="portfolio-experiment-3.jpg" data-title="Визуальный эксперимент — UI"></div>
-        <div class="poster clickable-preview" data-full="portfolio-experiment-4.jpg" data-title="Визуальный эксперимент — poster"></div>
-        <div class="poster clickable-preview" data-full="portfolio-experiment-5.jpg" data-title="Визуальный эксперимент — digital art"></div>
+
+        <div class="packaging-grid">
+          <div class="pack-card big clickable-preview" data-full="visual-tvoz-landing-2.png" data-title="Тяжеловоз — лендинг / каталог автозапчастей">
+            <img src="visual-tvoz-landing-2.png" alt="Тяжеловоз лендинг каталог">
+            <div class="pack-label">
+              <b>Auto / B2B landing</b>
+              <span>Каталог запчастей, формы, визуальные блоки</span>
+            </div>
+          </div>
+
+          <div class="pack-card contain clickable-preview" data-full="visual-business-cards.webp" data-title="Стелс-Юг — визитки и фирменный стиль">
+            <img src="visual-business-cards.webp" alt="Стелс-Юг визитки">
+            <div class="pack-label">
+              <b>Brand visuals</b>
+              <span>Визитки, фирменка, коммерческая графика</span>
+            </div>
+          </div>
+
+          <div class="pack-card clickable-preview" data-full="visual-catalog.png" data-title="Каталог — визуальная навигация по категориям">
+            <img src="visual-catalog.png" alt="Каталог визуальная навигация">
+            <div class="pack-label">
+              <b>Catalog UI</b>
+              <span>Категории, карточки, визуальная структура</span>
+            </div>
+          </div>
+
+          <div class="pack-card clickable-preview" data-full="visual-girgis.png" data-title="Гиргис — лендинг лодок">
+            <img src="visual-girgis.png" alt="Гиргис лендинг лодок">
+            <div class="pack-label">
+              <b>Landing concept</b>
+              <span>Главный экран, модели, промо-блоки</span>
+            </div>
+          </div>
+
+          <div class="pack-card wide clickable-preview" data-full="visual-tvoz-landing.png" data-title="Тяжеловоз — лендинг для поставщика запчастей">
+            <img src="visual-tvoz-landing.png" alt="Тяжеловоз лендинг">
+            <div class="pack-label">
+              <b>B2B web visual</b>
+              <span>Главный экран, категории, визуал под транспортную нишу</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="packaging-tags">
+          <span>landing</span>
+          <span>catalog UI</span>
+          <span>brand visuals</span>
+          <span>B2B</span>
+          <span>interface</span>
+          <span>digital packaging</span>
+        </div>
       </div>
 
       <p class="portfolio-note">
-        Когда появятся реальные скриншоты — просто меняешь мокап-блоки на изображения. Структура уже собрана под нормальный visual showcase.
+        В этом блоке собраны не “артовые эксперименты”, а коммерческий визуал: фирменка, лендинги, каталоги, карточки и B2B-графика.
       </p>
     </section>
 
