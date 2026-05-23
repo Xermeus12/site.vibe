@@ -3406,7 +3406,203 @@
       }
     }
 
-  </style>
+  
+/* ===== NEW VISUAL BALANCE ===== */
+
+.brand {
+  padding: 10px 16px 10px 10px !important;
+  border-radius: 20px !important;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(14px);
+}
+
+.brand-mark {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 14px !important;
+  font-size: 15px !important;
+  font-weight: 900;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(120,255,207,.28), transparent 44%),
+    linear-gradient(135deg,#0f3e84,#08152d) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.brand-lockup {
+  gap: 12px !important;
+}
+
+.brand-lockup b {
+  font-size: 20px !important;
+  font-weight: 950 !important;
+  letter-spacing: -.06em;
+}
+
+.brand-lockup em {
+  font-size: 16px !important;
+  font-weight: 850 !important;
+  color: #c9d7ee !important;
+}
+
+.section-image-panel {
+  position: absolute;
+  right: 72px;
+  top: 60px;
+  width: 420px;
+  height: 210px;
+  border-radius: 36px;
+  border: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+}
+
+.section-image-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.image-panel-glow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  right: -50px;
+  top: -60px;
+  background: radial-gradient(circle, rgba(120,255,207,.12), transparent 70%);
+  filter: blur(12px);
+}
+
+.image-panel-frame {
+  position: absolute;
+  inset: 22px;
+  border-radius: 26px;
+  border: 1px dashed rgba(255,255,255,.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.image-panel-plus {
+  width: 74px;
+  height: 74px;
+  border-radius: 24px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(120,255,207,.18);
+  position: relative;
+}
+
+.image-panel-plus::before,
+.image-panel-plus::after {
+  content: "";
+  position: absolute;
+  background: rgba(255,255,255,.88);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 999px;
+}
+
+.image-panel-plus::before {
+  width: 24px;
+  height: 2px;
+}
+
+.image-panel-plus::after {
+  width: 2px;
+  height: 24px;
+}
+
+.image-panel-text {
+  font-size: 13px;
+  color: #c8d4ea;
+  font-weight: 700;
+  letter-spacing: -.03em;
+}
+
+.exp-orbital-ui {
+  position: absolute;
+  right: 34px;
+  bottom: 28px;
+  width: 240px;
+  height: 180px;
+}
+
+.orbital-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 86px;
+  height: 86px;
+  transform: translate(-50%,-50%);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(120,255,207,.22), transparent 50%),
+    rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 60px rgba(120,255,207,.12);
+}
+
+.orbital-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.ring-1 {
+  inset: 16px;
+  animation: spinA 18s linear infinite;
+}
+
+.ring-2 {
+  inset: 42px;
+  border-style: dashed;
+  animation: spinB 11s linear infinite;
+}
+
+.orbital-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#8bb8ff,#78ffcf);
+  box-shadow: 0 0 20px rgba(120,255,207,.35);
+}
+
+.dot-1 { left: 22px; top: 38px; }
+.dot-2 { right: 26px; top: 56px; }
+.dot-3 { left: 98px; bottom: 12px; }
+
+@keyframes spinA {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinB {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@media(max-width: 940px) {
+  .section-image-panel {
+    display:none;
+  }
+
+  .exp-orbital-ui {
+    display:none;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -3417,7 +3613,7 @@
   <header class="wrap" id="top">
     <nav class="nav">
       <a class="brand" href="#top">
-        <span class="brand-mark">🐶</span>
+        <span class="brand-mark">◉</span>
         <span class="brand-lockup">
           <b>Вячеслав</b>
           <em>Weird Digital Vibe</em>
@@ -3490,14 +3686,14 @@
       </div>
 
 
-      <div class="section-signal-panel" aria-hidden="true">
-        <div class="signal-orbit"></div>
-        <div class="signal-core">UX</div>
-        <span class="signal-pill pill-a">human first</span>
-        <span class="signal-pill pill-b">not plastic</span>
-        <span class="signal-pill pill-c">visual trust</span>
-        <div class="signal-line line-a"></div>
-        <div class="signal-line line-b"></div>
+      <div class="section-image-panel" aria-hidden="true">
+        
+        <div class="image-panel-glow"></div>
+        <div class="image-panel-frame">
+          <div class="image-panel-plus"></div>
+          <div class="image-panel-text">drop png / visual / weird object</div>
+        </div>
+    
       </div>
 
       <div class="micro-row">
@@ -3635,12 +3831,13 @@
             <div></div>
           </div>
 
-          <div class="exp-system-map" aria-hidden="true">
-            <div class="exp-system-core">project<br><span>stack</span></div>
-            <span>catalog</span>
-            <span>office logic</span>
-            <span>frontend</span>
-            <span>content</span>
+          <div class="exp-orbital-ui" aria-hidden="true">
+            <div class="orbital-core"></div>
+            <div class="orbital-ring ring-1"></div>
+            <div class="orbital-ring ring-2"></div>
+            <div class="orbital-dot dot-1"></div>
+            <div class="orbital-dot dot-2"></div>
+            <div class="orbital-dot dot-3"></div>
           </div>
 
         </article>
