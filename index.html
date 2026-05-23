@@ -3062,6 +3062,47 @@
       }
     }
 
+  
+    /* =========================
+       FIX: badge behind face
+    ========================= */
+
+    .persona-wrap {
+      z-index: 6 !important;
+    }
+
+    .persona-plate {
+      left: 56px !important;
+      top: 120px !important;
+      right: auto !important;
+      z-index: 3 !important;
+      transform: rotate(-4deg) !important;
+      opacity: .86;
+    }
+
+    .persona-bg {
+      z-index: 1 !important;
+    }
+
+    .persona-chip {
+      z-index: 7 !important;
+    }
+
+    @media(max-width: 940px) {
+      .persona-plate {
+        left: 46px !important;
+        top: 98px !important;
+      }
+    }
+
+    @media(max-width: 560px) {
+      .persona-plate {
+        left: 36px !important;
+        top: 88px !important;
+        width: 205px !important;
+      }
+    }
+
   </style>
 </head>
 
