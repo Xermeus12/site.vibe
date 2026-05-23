@@ -3103,6 +3103,309 @@
       }
     }
 
+  
+    /* =========================
+       LOGO LOCKUP + BALANCE ELEMENTS
+    ========================= */
+
+    .brand {
+      gap: 10px;
+      padding: 8px 12px 8px 8px;
+      border-radius: 18px;
+      transition: background .22s ease, border-color .22s ease, transform .22s ease;
+      border: 1px solid transparent;
+    }
+
+    .brand:hover {
+      background: rgba(255,255,255,.045);
+      border-color: rgba(255,255,255,.10);
+      transform: translateY(-1px);
+    }
+
+    .brand-mark {
+      background:
+        radial-gradient(circle at 30% 25%, rgba(120,255,207,.24), transparent 42%),
+        linear-gradient(135deg, var(--blue), #071a35) !important;
+      font-size: 17px;
+    }
+
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+
+    .brand-lockup b {
+      font-size: 16px;
+      font-weight: 950;
+    }
+
+    .brand-lockup em {
+      position: relative;
+      padding-left: 10px;
+      color: #c8d5e8;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 850;
+    }
+
+    .brand-lockup em::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 1px;
+      height: 16px;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,.22);
+    }
+
+    #what {
+      position: relative;
+    }
+
+    .section-signal-panel {
+      position: absolute;
+      right: 70px;
+      top: 86px;
+      width: min(420px, 32vw);
+      height: 190px;
+      border-radius: 36px;
+      border: 1px solid rgba(255,255,255,.09);
+      background:
+        radial-gradient(circle at 50% 42%, rgba(120,255,207,.13), transparent 34%),
+        radial-gradient(circle at 70% 70%, rgba(177,121,255,.11), transparent 34%),
+        rgba(255,255,255,.025);
+      overflow: hidden;
+      pointer-events: none;
+      opacity: .95;
+    }
+
+    .section-signal-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(circle at 50% 50%, #000, transparent 75%);
+    }
+
+    .signal-orbit {
+      position: absolute;
+      inset: 32px 108px;
+      border-radius: 999px;
+      border: 1px dashed rgba(120,255,207,.20);
+      animation: signalSpin 18s linear infinite;
+    }
+
+    .signal-core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 72px;
+      height: 72px;
+      transform: translate(-50%, -50%);
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 950;
+      background: rgba(5,10,18,.52);
+      border: 1px solid rgba(120,255,207,.20);
+      box-shadow: 0 0 50px rgba(120,255,207,.13);
+      animation: signalPulse 3.5s ease-in-out infinite;
+    }
+
+    .signal-pill {
+      position: absolute;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(5,10,18,.48);
+      border: 1px solid rgba(255,255,255,.12);
+      color: #dce8ff;
+      font-size: 10px;
+      font-weight: 900;
+      backdrop-filter: blur(14px);
+      animation: signalFloat 4s ease-in-out infinite alternate;
+    }
+
+    .pill-a { left: 26px; top: 30px; }
+    .pill-b { right: 28px; top: 44px; animation-delay: -1.2s; }
+    .pill-c { left: 118px; bottom: 26px; animation-delay: -2.2s; }
+
+    .signal-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(120,255,207,.45), transparent);
+      animation: signalLine 2.6s ease-in-out infinite;
+    }
+
+    .signal-line.line-a { left: 40px; right: 40px; top: 78px; }
+    .signal-line.line-b { left: 90px; right: 90px; bottom: 64px; animation-delay: -1s; }
+
+    @keyframes signalSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes signalPulse {
+      0%,100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.045); }
+    }
+
+    @keyframes signalFloat {
+      from { transform: translateY(0); opacity: .65; }
+      to { transform: translateY(-8px); opacity: 1; }
+    }
+
+    @keyframes signalLine {
+      0%,100% { opacity: .18; transform: scaleX(.9); }
+      50% { opacity: .8; transform: scaleX(1); }
+    }
+
+    .case-icon-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-icon {
+      position: absolute;
+      right: 22px;
+      top: 22px;
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(120,255,207,.16), transparent 44%),
+        rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      font-size: 20px;
+      filter: saturate(.95);
+    }
+
+    .case-icon-card h3,
+    .case-icon-card p,
+    .case-icon-card small {
+      position: relative;
+      z-index: 2;
+    }
+
+    .case-icon-card::after {
+      content: "";
+      position: absolute;
+      right: -45px;
+      bottom: -55px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 0 0 28px rgba(255,255,255,.018);
+    }
+
+    .exp-main {
+      min-height: 310px;
+    }
+
+    .exp-system-map {
+      position: absolute;
+      right: 22px;
+      bottom: 24px;
+      width: 255px;
+      height: 150px;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(120,255,207,.11), transparent 34%),
+        rgba(5,10,18,.18);
+      overflow: hidden;
+    }
+
+    .exp-system-map::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 999px;
+      border: 1px dashed rgba(255,255,255,.12);
+      animation: signalSpin 20s linear infinite;
+    }
+
+    .exp-system-core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 82px;
+      height: 82px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 950;
+      line-height: 1;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(120,255,207,.16);
+    }
+
+    .exp-system-core span {
+      color: var(--cyan);
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .exp-system-map > span {
+      position: absolute;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(5,10,18,.52);
+      border: 1px solid rgba(255,255,255,.12);
+      font-size: 9px;
+      font-weight: 900;
+      color: #cfdaf0;
+    }
+
+    .exp-system-map > span:nth-child(2) { left: 16px; top: 22px; }
+    .exp-system-map > span:nth-child(3) { right: 14px; top: 20px; }
+    .exp-system-map > span:nth-child(4) { left: 20px; bottom: 22px; }
+    .exp-system-map > span:nth-child(5) { right: 28px; bottom: 22px; }
+
+    @media(max-width: 940px) {
+      .section-signal-panel {
+        display: none;
+      }
+
+      .brand-lockup {
+        gap: 7px;
+      }
+    }
+
+    @media(max-width: 620px) {
+      .brand-lockup {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+      }
+
+      .brand-lockup em {
+        padding-left: 0;
+        font-size: 11px;
+      }
+
+      .brand-lockup em::before {
+        display: none;
+      }
+
+      .exp-system-map {
+        display: none;
+      }
+    }
+
   </style>
 </head>
 
@@ -3115,7 +3418,10 @@
     <nav class="nav">
       <a class="brand" href="#top">
         <span class="brand-mark">🐶</span>
-        <span>Вячеслав / Weird Digital Vibe</span>
+        <span class="brand-lockup">
+          <b>Вячеслав</b>
+          <em>Weird Digital Vibe</em>
+        </span>
       </a>
 
       <div class="nav-links">
@@ -3181,6 +3487,17 @@
           Мне интересны не только заявки и кнопки, а то, как проект ощущается:
           визуал, структура, язык, доверие, скорость восприятия и культурный контекст.
         </p>
+      </div>
+
+
+      <div class="section-signal-panel" aria-hidden="true">
+        <div class="signal-orbit"></div>
+        <div class="signal-core">UX</div>
+        <span class="signal-pill pill-a">human first</span>
+        <span class="signal-pill pill-b">not plastic</span>
+        <span class="signal-pill pill-c">visual trust</span>
+        <div class="signal-line line-a"></div>
+        <div class="signal-line line-b"></div>
       </div>
 
       <div class="micro-row">
@@ -3262,19 +3579,22 @@
       </div>
 
       <div class="cards">
-        <article class="card">
+        <article class="card case-icon-card">
+          <div class="case-icon">🧩</div>
           <small>CASE / POLUS+</small>
           <h3>ABCP + интернет-магазин</h3>
           <p>UX, структура, интеграции, каталоги, визуал, работа с 1С, адаптация под реальные процессы бизнеса.</p>
         </article>
 
-        <article class="card">
+        <article class="card case-icon-card">
+          <div class="case-icon">🏠</div>
           <small>CASE / SOUTH HOUSE</small>
           <h3>Контент и digital</h3>
           <p>Посты, реклама, визуал, лендинги, подача проектов, маркетинг без ощущения “строительного PDF”.</p>
         </article>
 
-        <article class="card">
+        <article class="card case-icon-card">
+          <div class="case-icon">📦</div>
           <small>CASE / MARKETPLACES</small>
           <h3>Инфографика и упаковка</h3>
           <p>Ozon / WB, карточки товаров, SEO-описания, визуальная упаковка и ощущение бренда.</p>
@@ -3314,6 +3634,15 @@
             <div></div>
             <div></div>
           </div>
+
+          <div class="exp-system-map" aria-hidden="true">
+            <div class="exp-system-core">project<br><span>stack</span></div>
+            <span>catalog</span>
+            <span>office logic</span>
+            <span>frontend</span>
+            <span>content</span>
+          </div>
+
         </article>
 
         <article class="exp-card">
