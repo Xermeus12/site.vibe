@@ -2895,7 +2895,143 @@
   50% { opacity:1; }
 }
 
-</style>
+
+    /* =========================
+       EXPERIENCE GRID FILLER CARD
+    ========================= */
+
+    .exp-chaos-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      padding: 24px;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(circle at 20% 18%, rgba(120,255,207,.13), transparent 30%),
+        radial-gradient(circle at 80% 78%, rgba(127,176,255,.12), transparent 30%),
+        rgba(255,255,255,.05);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 70px rgba(0,0,0,.18);
+    }
+
+    .exp-chaos-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 30px 30px;
+      mask-image: radial-gradient(circle at 50% 50%, #000, transparent 78%);
+      opacity: .9;
+    }
+
+    .exp-chaos-core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 128px;
+      height: 128px;
+      transform: translate(-50%, -50%);
+      border-radius: 38px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      z-index: 3;
+      border: 1px solid rgba(120,255,207,.22);
+      background:
+        linear-gradient(135deg, rgba(20,84,166,.34), rgba(120,255,207,.10)),
+        rgba(5,10,18,.55);
+      box-shadow: 0 0 55px rgba(120,255,207,.13);
+      animation: expCorePulse 4s ease-in-out infinite;
+    }
+
+    .exp-chaos-core b {
+      font-size: 16px;
+      letter-spacing: -.04em;
+      line-height: .95;
+    }
+
+    .exp-chaos-core span {
+      display: block;
+      margin-top: 7px;
+      font-size: 10px;
+      color: #78ffcf;
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+
+    .exp-chaos-pill {
+      position: absolute;
+      z-index: 4;
+      padding: 9px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(5,10,18,.55);
+      color: #dce8ff;
+      font-size: 11px;
+      font-weight: 900;
+      backdrop-filter: blur(14px);
+      animation: expPillFloat 3.8s ease-in-out infinite alternate;
+    }
+
+    .exp-chaos-pill:nth-child(2) { left: 8%; top: 16%; animation-delay: -.4s; }
+    .exp-chaos-pill:nth-child(3) { right: 8%; top: 18%; animation-delay: -1.1s; }
+    .exp-chaos-pill:nth-child(4) { left: 10%; bottom: 16%; animation-delay: -2s; }
+    .exp-chaos-pill:nth-child(5) { right: 10%; bottom: 15%; animation-delay: -2.7s; }
+    .exp-chaos-pill:nth-child(6) { left: 42%; top: 8%; animation-delay: -1.8s; }
+
+    .exp-chaos-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(120,255,207,.52), transparent);
+      z-index: 2;
+      animation: expLinePulse 2.5s ease-in-out infinite;
+    }
+
+    .exp-chaos-line.line-1 { left: 10%; top: 34%; width: 58%; }
+    .exp-chaos-line.line-2 { right: 8%; top: 58%; width: 54%; animation-delay: -.8s; }
+    .exp-chaos-line.line-3 { left: 22%; bottom: 24%; width: 44%; animation-delay: -1.4s; }
+
+    @keyframes expCorePulse {
+      0%,100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.045); }
+    }
+
+    @keyframes expPillFloat {
+      from { transform: translateY(0); opacity: .72; }
+      to { transform: translateY(-8px); opacity: 1; }
+    }
+
+    @keyframes expLinePulse {
+      0%,100% { opacity: .22; transform: scaleX(.9); }
+      50% { opacity: .9; transform: scaleX(1); }
+    }
+
+    @media(max-width: 900px) {
+      .exp-chaos-card {
+        min-height: 240px;
+      }
+    }
+
+  
+    /* =========================
+       STACK EXTENDED
+    ========================= */
+
+    .stack-list span {
+      white-space: nowrap;
+    }
+
+    .stack-block {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(127,176,255,.09), transparent 28%),
+        radial-gradient(circle at 88% 80%, rgba(120,255,207,.07), transparent 30%),
+        rgba(255,255,255,.05);
+    }
+
+  </style>
 </head>
 
 <body>
@@ -3128,6 +3264,26 @@
           <p>Верстка лендингов, интерфейсы, hero-блоки, визуальные эксперименты.</p>
           <div class="mock-browser"><div></div></div>
         </article>
+
+        <article class="exp-chaos-card" aria-hidden="true">
+          <div class="exp-chaos-core">
+            <div>
+              <b>system<br>online</b>
+              <span>SIGNAL</span>
+            </div>
+          </div>
+
+          <div class="exp-chaos-pill">UX</div>
+          <div class="exp-chaos-pill">frontend</div>
+          <div class="exp-chaos-pill">content</div>
+          <div class="exp-chaos-pill">analytics</div>
+          <div class="exp-chaos-pill">ABCP</div>
+
+          <div class="exp-chaos-line line-1"></div>
+          <div class="exp-chaos-line line-2"></div>
+          <div class="exp-chaos-line line-3"></div>
+        </article>
+
       </div>
 
       <div class="operator-block">
@@ -3175,14 +3331,30 @@
           <span>OpenCart</span>
           <span>1С</span>
           <span>Yandex Direct</span>
+          <span>Yandex Metrica</span>
+          <span>Avito</span>
           <span>Ozon</span>
           <span>Wildberries</span>
+          <span>Яндекс Маркет</span>
           <span>HTML</span>
           <span>CSS</span>
-          <span>Flask</span>
+          <span>JavaScript</span>
+          <span>GitHub</span>
+          <span>Vercel</span>
           <span>SQL</span>
           <span>Photoshop</span>
           <span>After Effects</span>
+          <span>Figma</span>
+          <span>VK</span>
+          <span>Telegram</span>
+          <span>Threads</span>
+          <span>SEO</span>
+          <span>UX</span>
+          <span>Marketplace SEO</span>
+          <span>Content strategy</span>
+          <span>Infographics</span>
+          <span>ABCP CSS</span>
+          <span>Digital packaging</span>
         </div>
       </div>
     </section>
