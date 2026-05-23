@@ -2572,6 +2572,74 @@
       letter-spacing: -.04em;
     }
 
+  
+    /* =========================
+       FIX: equal height for Polus + South cards
+    ========================= */
+
+    #portfolio .portfolio-showcase {
+      align-items: stretch !important;
+    }
+
+    #portfolio .polus-case,
+    #portfolio .south-analytics-case {
+      height: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    #portfolio .polus-bottom,
+    #portfolio .south-bottom,
+    #portfolio .portfolio-tags {
+      flex-shrink: 0 !important;
+    }
+
+    #portfolio .polus-visual-layout,
+    #portfolio .metrika-window {
+      flex: 1 1 auto !important;
+    }
+
+    #portfolio .polus-desktop-preview {
+      height: 250px !important;
+      min-height: 250px !important;
+    }
+
+    #portfolio .polus-admin-preview {
+      height: 122px !important;
+      min-height: 122px !important;
+    }
+
+    #portfolio .polus-mobile-preview {
+      height: 382px !important;
+      min-height: 382px !important;
+    }
+
+    #portfolio .polus-actions,
+    #portfolio .polus-system,
+    #portfolio .south-actions,
+    #portfolio .south-insights {
+      min-height: 150px !important;
+    }
+
+    @media(max-width: 940px) {
+      #portfolio .polus-case,
+      #portfolio .south-analytics-case {
+        height: auto !important;
+      }
+
+      #portfolio .polus-desktop-preview {
+        height: 330px !important;
+      }
+
+      #portfolio .polus-admin-preview {
+        height: 170px !important;
+      }
+
+      #portfolio .polus-mobile-preview {
+        height: 520px !important;
+      }
+    }
+
   </style>
 </head>
 
