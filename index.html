@@ -3602,6 +3602,723 @@
   }
 }
 
+
+/* =========================
+   FINAL MOBILE ADAPTATION
+========================= */
+
+@media (max-width: 760px) {
+  body {
+    background:
+      radial-gradient(circle at 20% 8%, rgba(20,84,166,.42), transparent 36%),
+      radial-gradient(circle at 90% 28%, rgba(177,121,255,.14), transparent 32%),
+      linear-gradient(135deg, var(--bg), var(--bg2));
+  }
+
+  .wrap {
+    width: min(100% - 22px, 1180px) !important;
+  }
+
+  .nav {
+    padding: 16px 0 !important;
+  }
+
+  .brand {
+    max-width: 100%;
+    padding: 8px 10px 8px 8px !important;
+    border-radius: 17px !important;
+  }
+
+  .brand-mark {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    border-radius: 12px !important;
+  }
+
+  .brand-lockup {
+    gap: 7px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  .brand-lockup b {
+    font-size: 15px !important;
+    white-space: nowrap;
+  }
+
+  .brand-lockup em {
+    font-size: 12px !important;
+    white-space: nowrap;
+  }
+
+  .hero {
+    min-height: auto !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 26px 0 52px !important;
+  }
+
+  .eyebrow {
+    font-size: 12px !important;
+    padding: 9px 12px !important;
+    margin-bottom: 18px !important;
+  }
+
+  h1 {
+    font-size: clamp(48px, 16vw, 72px) !important;
+    line-height: .9 !important;
+    letter-spacing: -.08em !important;
+  }
+
+  .lead {
+    margin-top: 20px !important;
+    font-size: 15.5px !important;
+    line-height: 1.6 !important;
+  }
+
+  .actions {
+    margin-top: 24px !important;
+    gap: 10px !important;
+  }
+
+  .btn {
+    width: 100%;
+    min-height: 50px !important;
+    border-radius: 15px !important;
+  }
+
+  .persona-stage {
+    min-height: 520px !important;
+    margin-top: 8px;
+  }
+
+  .persona-bg {
+    inset: 68px 4px 22px !important;
+    border-radius: 34px !important;
+  }
+
+  .persona-wrap {
+    inset: 0 -62px 0 -62px !important;
+    align-items: flex-end !important;
+    z-index: 6 !important;
+  }
+
+  .persona-img {
+    width: 470px !important;
+    max-width: none !important;
+    transform: translateY(52px) rotate(.5deg) !important;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%) !important;
+    mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%) !important;
+  }
+
+  .persona-plate {
+    left: 18px !important;
+    top: 66px !important;
+    width: 196px !important;
+    padding: 12px 13px !important;
+    transform: rotate(-4deg) !important;
+    z-index: 3 !important;
+  }
+
+  .persona-plate span {
+    font-size: 10px !important;
+  }
+
+  .persona-plate b {
+    font-size: 13px !important;
+  }
+
+  .persona-chip {
+    font-size: 11px !important;
+    padding: 9px 11px !important;
+  }
+
+  .chip-left {
+    left: 10px !important;
+    bottom: 76px !important;
+  }
+
+  .chip-right {
+    right: 6px !important;
+    bottom: 162px !important;
+  }
+
+  .ticker-track {
+    gap: 24px !important;
+    padding: 12px 0 !important;
+    font-size: 12px !important;
+  }
+
+  section {
+    padding: 62px 0 !important;
+  }
+
+  .section-head {
+    display: block !important;
+    margin-bottom: 24px !important;
+  }
+
+  h2 {
+    font-size: clamp(36px, 13vw, 54px) !important;
+    line-height: .95 !important;
+  }
+
+  .section-text {
+    margin-top: 16px !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  .micro-row,
+  .cards,
+  .work-block,
+  .experience-grid,
+  .operator-block,
+  .portfolio-showcase,
+  .portfolio-mini-grid,
+  .packaging-head,
+  .packaging-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .micro-card,
+  .card,
+  .exp-card,
+  .exp-chaos-card,
+  .operator-left,
+  .operator-right,
+  .stack-block,
+  .case-panel,
+  .mini-case,
+  .packaging-showcase,
+  .polus-case,
+  .south-analytics-case {
+    border-radius: 24px !important;
+  }
+
+  .micro-card {
+    min-height: 105px !important;
+  }
+
+  .card {
+    min-height: auto !important;
+    padding: 22px !important;
+  }
+
+  .case-icon {
+    right: 16px !important;
+    top: 16px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .terminal,
+  .manifesto {
+    min-height: auto !important;
+    border-radius: 26px !important;
+  }
+
+  .terminal-body {
+    padding: 20px !important;
+    font-size: 12px !important;
+    overflow-x: auto;
+  }
+
+  .manifesto {
+    padding: 24px !important;
+  }
+
+  .manifesto p {
+    font-size: 25px !important;
+  }
+
+  .experience-grid {
+    gap: 14px !important;
+  }
+
+  .exp-card,
+  .exp-chaos-card {
+    min-height: auto !important;
+    padding: 22px !important;
+  }
+
+  .exp-card h3,
+  .operator-left h3 {
+    font-size: 27px !important;
+    line-height: 1 !important;
+  }
+
+  .exp-system-map,
+  .exp-orbital-ui,
+  .section-image-panel,
+  .section-signal-panel {
+    display: none !important;
+  }
+
+  .exp-lines {
+    opacity: .11 !important;
+    right: -120px !important;
+  }
+
+  .operator-left,
+  .operator-right,
+  .stack-block {
+    padding: 22px !important;
+  }
+
+  .operator-list,
+  .stack-list {
+    gap: 8px !important;
+  }
+
+  .operator-list span,
+  .stack-list span {
+    font-size: 11px !important;
+    padding: 8px 10px !important;
+  }
+
+  #portfolio .portfolio-showcase {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  #portfolio .polus-case,
+  #portfolio .south-analytics-case {
+    height: auto !important;
+    padding: 18px !important;
+  }
+
+  .polus-case-top,
+  .south-case-top,
+  .case-top {
+    display: block !important;
+    margin-bottom: 16px !important;
+  }
+
+  .polus-case-copy,
+  .south-case-copy,
+  .case-copy {
+    max-width: none !important;
+    margin-top: 10px !important;
+  }
+
+  .polus-visual-layout {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  #portfolio .polus-desktop-preview {
+    height: 250px !important;
+    min-height: 250px !important;
+  }
+
+  #portfolio .polus-admin-preview {
+    height: 145px !important;
+    min-height: 145px !important;
+  }
+
+  #portfolio .polus-mobile-preview {
+    height: 430px !important;
+    min-height: 430px !important;
+  }
+
+  .polus-bottom,
+  .south-bottom {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .polus-actions,
+  .polus-system,
+  .south-actions,
+  .south-insights {
+    min-height: auto !important;
+    padding: 14px !important;
+  }
+
+  .polus-tech-orbit {
+    min-height: 160px !important;
+    margin: 10px 0 0 !important;
+  }
+
+  .orbit-core {
+    width: 92px !important;
+    height: 92px !important;
+    border-radius: 26px !important;
+    font-size: 13px !important;
+  }
+
+  .orbit-node {
+    font-size: 9px !important;
+    padding: 7px 8px !important;
+  }
+
+  .metrika-topbar {
+    height: auto !important;
+    min-height: 54px !important;
+    padding: 12px 14px !important;
+  }
+
+  .metrika-content {
+    padding: 14px !important;
+  }
+
+  .metrika-heading {
+    font-size: 22px !important;
+  }
+
+  .metrika-stats,
+  #portfolio .south-analytics-case .metrika-stats {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  #portfolio .south-analytics-case .metrika-stat {
+    min-height: auto !important;
+    padding: 14px !important;
+  }
+
+  #portfolio .south-analytics-case .metrika-stat b {
+    font-size: 28px !important;
+  }
+
+  #portfolio .south-analytics-case .metrika-chart {
+    height: 210px !important;
+  }
+
+  .metrika-legend {
+    font-size: 11px !important;
+  }
+
+  .mini-case {
+    min-height: auto !important;
+    padding: 20px !important;
+  }
+
+  .mini-visuals {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .mini-visual,
+  #portfolio .mini-visual.has-image {
+    height: 150px !important;
+  }
+
+  .analytics-box {
+    padding: 14px !important;
+  }
+
+  .stat-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .chart-line {
+    height: 120px !important;
+  }
+
+  .packaging-showcase {
+    padding: 18px !important;
+  }
+
+  .packaging-head h3 {
+    font-size: 38px !important;
+  }
+
+  .packaging-grid {
+    grid-auto-rows: 250px !important;
+  }
+
+  .pack-card.big,
+  .pack-card.wide {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .pack-label {
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    padding: 10px 12px !important;
+    border-radius: 15px !important;
+  }
+
+  .pack-label b {
+    font-size: 13px !important;
+  }
+
+  .pack-label span {
+    font-size: 11px !important;
+  }
+
+  .quote {
+    padding: 24px !important;
+    border-radius: 26px !important;
+  }
+
+  .quote p {
+    font-size: 30px !important;
+  }
+
+  .footer-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-socials {
+    gap: 8px !important;
+  }
+
+  .social-link {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 13px !important;
+  }
+
+  .back-to-top {
+    right: 14px !important;
+    bottom: 14px !important;
+    width: 46px !important;
+    height: 46px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .brand-lockup em {
+    display: none !important;
+  }
+
+  h1 {
+    font-size: 45px !important;
+  }
+
+  .persona-img {
+    width: 430px !important;
+  }
+
+  .persona-stage {
+    min-height: 490px !important;
+  }
+
+  .mini-visuals {
+    grid-template-columns: 1fr !important;
+  }
+
+  .mini-visual,
+  #portfolio .mini-visual.has-image {
+    height: 190px !important;
+  }
+}
+
+
+/* =========================
+   THREADS CARDS + ANALYTICS CASE
+========================= */
+
+.threads-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.thread-card {
+  min-height: 138px;
+  padding: 15px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 90% 12%, rgba(120,255,207,.12), transparent 42%),
+    linear-gradient(145deg, rgba(110,140,255,.14), rgba(110,255,210,.065));
+  border: 1px solid rgba(255,255,255,.10);
+  position: relative;
+  overflow: hidden;
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+
+.thread-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(120,255,220,.25);
+  box-shadow: 0 18px 45px rgba(120,255,220,.06);
+}
+
+.thread-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(circle at 80% 30%, #000, transparent 74%);
+  pointer-events: none;
+}
+
+.thread-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 13px;
+  font-size: 11px;
+  color: #9fb3ff;
+  font-weight: 850;
+  position: relative;
+  z-index: 2;
+}
+
+.thread-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #74ffd7;
+  box-shadow: 0 0 12px rgba(116,255,215,.82);
+}
+
+.thread-card p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.48;
+  color: #f2f5ff;
+  letter-spacing: -.02em;
+}
+
+.analytics-case {
+  margin-top: 22px;
+  padding: 18px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(120,255,207,.11), transparent 32%),
+    linear-gradient(180deg, rgba(18,20,40,.94), rgba(14,16,32,.94));
+  border: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+}
+
+.analytics-head {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.analytics-metric {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.07);
+}
+
+.analytics-metric span {
+  display: block;
+  font-size: 11px;
+  color: #93a0c8;
+  margin-bottom: 6px;
+  font-weight: 850;
+}
+
+.analytics-metric strong {
+  display: block;
+  font-size: 25px;
+  line-height: 1;
+  color: white;
+  letter-spacing: -.06em;
+}
+
+.case-graph {
+  position: relative;
+  height: 168px;
+  border-radius: 20px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(60,255,220,.08), rgba(130,100,255,.05));
+  border: 1px solid rgba(255,255,255,.07);
+}
+
+.case-graph::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
+.case-graph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+  transform: translateX(-100%);
+  animation: scanGraph 4s ease-in-out infinite;
+}
+
+.graph-line {
+  position: absolute;
+  width: 140%;
+  height: 5px;
+  background: linear-gradient(90deg, #70ffd5, #7b8cff);
+  top: 62%;
+  left: -12%;
+  transform: rotate(-18deg);
+  border-radius: 999px;
+  box-shadow: 0 0 24px rgba(120,255,220,.42);
+  animation: graphMove 5s ease-in-out infinite alternate;
+}
+
+.floating-note {
+  position: absolute;
+  z-index: 3;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  color: white;
+  background: rgba(18,20,40,.82);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(12px);
+  font-weight: 850;
+}
+
+.note-1 { top: 18px; left: 18px; }
+.note-2 { bottom: 18px; left: 92px; }
+.note-3 { top: 62px; right: 18px; }
+
+.analytics-caption {
+  margin: 14px 0 0;
+  color: #aeb9cc;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+@keyframes graphMove {
+  from { transform: rotate(-18deg) translateY(0); }
+  to { transform: rotate(-14deg) translateY(-12px); }
+}
+
+@keyframes scanGraph {
+  0% { transform: translateX(-120%); opacity: 0; }
+  45%, 55% { opacity: .55; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+
+@media(max-width: 760px) {
+  .threads-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .thread-card {
+    min-height: 120px !important;
+  }
+
+  .analytics-head {
+    grid-template-columns: 1fr !important;
+  }
+
+  .case-graph {
+    height: 150px !important;
+  }
+}
+
 </style>
 </head>
 
@@ -4142,26 +4859,80 @@
         <article class="mini-case">
           <h3>Соцсети / Threads</h3>
           <p>Посты, мысли, мемы, digital-наблюдения и человеческий голос вместо экспертной пластмассы.</p>
-          <div class="mini-visuals">
-            <div class="mini-visual clickable-preview" data-full="portfolio-social-1.jpg" data-title="Соцсети / Threads — пост"></div>
-            <div class="mini-visual clickable-preview" data-full="portfolio-social-2.jpg" data-title="Соцсети / Threads — наблюдение"></div>
-            <div class="mini-visual clickable-preview" data-full="portfolio-social-3.jpg" data-title="Соцсети / Threads — мемный формат"></div>
-            <div class="mini-visual clickable-preview" data-full="portfolio-social-4.jpg" data-title="Соцсети / Threads — digital thought"></div>
+
+          <div class="threads-grid">
+            <div class="thread-card">
+              <div class="thread-top">
+                <span class="thread-dot"></span>
+                <span>@vyacheslav.exe</span>
+              </div>
+              <p>CTR норм, но сайт ощущается как госуслуги после бессонной ночи.</p>
+            </div>
+
+            <div class="thread-card">
+              <div class="thread-top">
+                <span class="thread-dot"></span>
+                <span>@digital_vibe</span>
+              </div>
+              <p>Люди не читают интерфейс. Они чувствуют — можно ли ему доверять.</p>
+            </div>
+
+            <div class="thread-card">
+              <div class="thread-top">
+                <span class="thread-dot"></span>
+                <span>@chaos_operator</span>
+              </div>
+              <p>Иногда UX — это просто убрать 14 кнопок и оставить одну нормальную.</p>
+            </div>
+
+            <div class="thread-card">
+              <div class="thread-top">
+                <span class="thread-dot"></span>
+                <span>@weird.internet</span>
+              </div>
+              <p>Сильный digital — когда проект ощущается живым, а не “сделанным”.</p>
+            </div>
           </div>
+
           <div class="portfolio-tags"><b>social</b><b>memes</b><b>tone</b></div>
         </article>
 
         <article class="mini-case">
           <h3>Аналитика</h3>
           <p>Рекламные кампании, выводы, точки роста и нормальная подача цифр.</p>
-          <div class="analytics-box clickable-preview" data-full="portfolio-analytics.jpg" data-title="Аналитика — отчёты, CPA, CR, выводы">
-            <div class="stat-row">
-              <div class="stat"><b>-34%</b><span>CPA</span></div>
-              <div class="stat"><b>2.35%</b><span>CR</span></div>
-              <div class="stat"><b>1.8k</b><span>leads</span></div>
+
+          <div class="analytics-case">
+            <div class="analytics-head">
+              <div class="analytics-metric">
+                <span>CPA</span>
+                <strong>-34%</strong>
+              </div>
+
+              <div class="analytics-metric">
+                <span>CTR</span>
+                <strong>2.35%</strong>
+              </div>
+
+              <div class="analytics-metric">
+                <span>Лиды</span>
+                <strong>1.8k</strong>
+              </div>
             </div>
-            <div class="chart-line"></div>
+
+            <div class="case-graph">
+              <div class="graph-line"></div>
+
+              <div class="floating-note note-1">CTR ↑</div>
+              <div class="floating-note note-2">direct stable</div>
+              <div class="floating-note note-3">growth detected</div>
+            </div>
+
+            <p class="analytics-caption">
+              Кейс: поиск связок, где реклама даёт не просто клики, а заявки.
+              Смотрю CPA, CR, источники и поведение на посадочных.
+            </p>
           </div>
+
           <div class="portfolio-tags"><b>Direct</b><b>CPA</b><b>reports</b></div>
         </article>
       </div>
