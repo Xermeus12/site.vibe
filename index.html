@@ -2494,6 +2494,42 @@
       }
     }
 
+  
+    /* =========================
+       FIX: Digital packaging compact cards
+    ========================= */
+
+    .packaging-grid {
+      grid-template-columns: 1.05fr .95fr .95fr !important;
+      grid-auto-rows: 220px !important;
+      align-items: stretch;
+    }
+
+    .pack-card.wide {
+      grid-column: auto !important;
+    }
+
+    .pack-card img {
+      object-position: top center !important;
+    }
+
+    .pack-card.big {
+      grid-row: span 2;
+    }
+
+    @media(max-width: 940px) {
+      .packaging-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+    }
+
+    @media(max-width: 620px) {
+      .packaging-grid {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: 250px !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -3018,15 +3054,15 @@
             </div>
           </div>
 
-          <div class="pack-card clickable-preview" data-full="visual-girgis.png" data-title="Гиргис — лендинг лодок">
+          <div class="pack-card clickable-preview" data-full="visual-girgis.png" data-title="Гиргис — каталог лодок и конфигуратор по цвету">
             <img src="visual-girgis.png" alt="Гиргис лендинг лодок">
             <div class="pack-label">
-              <b>Landing concept</b>
-              <span>Главный экран, модели, промо-блоки</span>
+              <b>Boat catalog</b>
+              <span>Каталог лодок, модели и конфигуратор по цвету</span>
             </div>
           </div>
 
-          <div class="pack-card wide clickable-preview" data-full="visual-tvoz-landing.png" data-title="Тяжеловоз — лендинг для поставщика запчастей">
+          <div class="pack-card clickable-preview" data-full="visual-tvoz-landing.png" data-title="Тяжеловоз — лендинг для поставщика запчастей">
             <img src="visual-tvoz-landing.png" alt="Тяжеловоз лендинг">
             <div class="pack-label">
               <b>B2B web visual</b>
