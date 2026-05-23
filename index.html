@@ -3031,6 +3031,37 @@
         rgba(255,255,255,.05);
     }
 
+  
+    /* =========================
+       FIX: hero badge position
+    ========================= */
+
+    .persona-plate {
+      right: auto !important;
+      left: 18px !important;
+      top: 120px !important;
+      transform: rotate(-4deg) !important;
+      z-index: 5 !important;
+    }
+
+    @media(max-width: 940px) {
+      .persona-plate {
+        left: 14px !important;
+        right: auto !important;
+        top: 84px !important;
+      }
+    }
+
+    @media(max-width: 560px) {
+      .persona-plate {
+        left: 12px !important;
+        right: auto !important;
+        top: 64px !important;
+        width: 205px !important;
+        transform: rotate(-3deg) !important;
+      }
+    }
+
   </style>
 </head>
 
