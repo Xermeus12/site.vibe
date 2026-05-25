@@ -4350,6 +4350,215 @@
   }
 }
 
+
+
+/* =========================
+   EMERGENCY MOBILE FIX 25.05
+   - убираем горизонтальный скролл
+   - фото в hero меньше и не перекрывает CTA
+   - Ozon/WB карточки на всю ширину
+   - exp-chaos больше не схлопывается в полоску
+========================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 760px) {
+  html,
+  body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    overflow-x: clip !important;
+  }
+
+  section,
+  .hero,
+  .cards,
+  .card,
+  .micro-row,
+  .micro-card,
+  .experience-grid,
+  .exp-card,
+  .operator-block,
+  .operator-left,
+  .operator-right,
+  .stack-block,
+  .portfolio-showcase,
+  .portfolio-mini-grid,
+  .mini-case,
+  .packaging-showcase,
+  .quote,
+  .footer,
+  #portfolio,
+  #portfolio .polus-case,
+  #portfolio .south-analytics-case {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: clip !important;
+  }
+
+  /* Hero: текст и кнопки всегда выше фото */
+  .hero > div:first-child,
+  .hero-copy,
+  .actions,
+  .btn {
+    position: relative !important;
+    z-index: 20 !important;
+  }
+
+  .hero {
+    gap: 18px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .persona-stage {
+    min-height: 360px !important;
+    margin-top: 4px !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+
+  .persona-bg {
+    inset: 42px 10px 14px !important;
+    border-radius: 28px !important;
+  }
+
+  .persona-wrap {
+    inset: 0 -6px 0 -6px !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    z-index: 2 !important;
+    filter: none !important;
+    animation: none !important;
+  }
+
+  .persona-img {
+    width: 330px !important;
+    max-width: 88vw !important;
+    transform: translateY(8px) rotate(.5deg) !important;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 82%, transparent 100%) !important;
+    mask-image: linear-gradient(to bottom, #000 0%, #000 82%, transparent 100%) !important;
+  }
+
+  .persona-plate {
+    left: 12px !important;
+    top: 46px !important;
+    width: 180px !important;
+    z-index: 3 !important;
+  }
+
+  .chip-left {
+    left: 10px !important;
+    bottom: 40px !important;
+  }
+
+  .chip-right {
+    right: 8px !important;
+    bottom: 118px !important;
+  }
+
+  /* Чтобы декоративная карточка не превращалась в тонкую полоску */
+  .exp-chaos-card {
+    display: block !important;
+    min-height: 245px !important;
+    height: 245px !important;
+    padding: 22px !important;
+    overflow: hidden !important;
+  }
+
+  .exp-chaos-core {
+    width: 112px !important;
+    height: 112px !important;
+    border-radius: 30px !important;
+  }
+
+  .exp-chaos-pill {
+    font-size: 10px !important;
+    padding: 8px 10px !important;
+  }
+
+  /* Ozon/WB: на мобилке одна карточка в ряд, во всю ширину */
+  #portfolio .portfolio-mini-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  #portfolio .portfolio-mini-grid .mini-case:first-child .mini-visuals {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  #portfolio .portfolio-mini-grid .mini-case:first-child .mini-visual.has-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1 / 1 !important;
+    padding: 10px !important;
+    border-radius: 22px !important;
+  }
+
+  #portfolio .portfolio-mini-grid .mini-case:first-child .mini-visual.has-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 16px !important;
+  }
+
+  .threads-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer-socials {
+    flex-wrap: wrap !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .wrap {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .persona-stage {
+    min-height: 335px !important;
+  }
+
+  .persona-img {
+    width: 305px !important;
+    max-width: 84vw !important;
+    transform: translateY(4px) rotate(.5deg) !important;
+  }
+
+  .persona-plate,
+  .persona-chip {
+    display: none !important;
+  }
+
+  h1 {
+    font-size: 43px !important;
+  }
+
+  .quote p {
+    font-size: 27px !important;
+  }
+}
+
 </style>
 </head>
 
