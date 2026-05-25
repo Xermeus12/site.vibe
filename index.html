@@ -4558,7 +4558,61 @@ body {
     font-size: 27px !important;
   }
 }
+/* MOBILE FINAL FIX */
+@media (max-width: 560px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden !important;
+    background: #071225 !important;
+  }
 
+  body {
+    position: relative;
+  }
+
+  /* чтобы на iPhone не было белого фона по краям */
+  html {
+    background:
+      radial-gradient(circle at 12% 12%, rgba(20,84,166,.45), transparent 32%),
+      radial-gradient(circle at 84% 22%, rgba(177,121,255,.18), transparent 30%),
+      linear-gradient(135deg, #071225, #160d1d) !important;
+  }
+
+  /* опускаем тебя ниже, чтобы кнопка Instagram не лезла на лоб */
+  .persona-img {
+    width: 330px !important;
+    transform: translateY(95px) rotate(1deg) !important;
+  }
+
+  .persona-stage {
+    min-height: 520px !important;
+  }
+
+  .persona-wrap {
+    inset: 0 -10px 0 -10px !important;
+    align-items: flex-end !important;
+  }
+
+  /* картинки Ozon/WB делаем 3:4 и во всю ширину */
+  .mini-visuals {
+    grid-template-columns: 1fr !important;
+  }
+
+  .mini-visual.has-image {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 4 !important;
+  }
+
+  .mini-visual.has-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}
 </style>
 </head>
 
